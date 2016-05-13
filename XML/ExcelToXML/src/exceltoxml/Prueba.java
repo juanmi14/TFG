@@ -12,7 +12,12 @@ import org.apache.poi.xssf.usermodel.*;
 /**
  *
  * @author JUANMI
+<<<<<<< HEAD
  * prueba de branch de extracción
+=======
+ * VALE, AHORA SÍ QUE ESTAMOS EN LA BRANCH
+ * SEGUNDA LÍNEA DE LA BRANCH
+>>>>>>> Extracción
  */
 public class Prueba {
 
