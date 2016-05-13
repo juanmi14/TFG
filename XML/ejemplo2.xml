@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Family name="Enterobacteriaceae" defined="true">
+    <DiskDifution><!-- tiene este elemento si withFullStudy=="true" -->
+        <Medium>Mueller-Hinton agar</Medium>
+        <Inoculum>McFarland 0.5</Inoculum>
+        <Incubation>Air, 35+-1ºC, 18+-2h</Incubation>
+        <Reading>Bla bla bla</Reading>
+        <QualityControl>Bla bla bla</QualityControl>
+    </DiskDifution>
+    
+    <Group name="Penicillins">
+        <Notes>
+            <Note id="1/A">Bla bla bla</Note>
+            <Note id="2">Bla bla bla</Note>
+            <Note id="B">Bla bla bla</Note>
+        </Notes>
+        <Note id="1">Bla bla bla</Note><!-- opc -->
+        <AntimicrobialAgent name="Benzylpenicillin">
+            <Link>eucast.com</Link><!-- opc -->
+            <MICBreackPoint><!-- migrograms -->
+                <S><!-- <= -->
+                    <Value>-</Value>
+                </S>
+                <R><!-- > -->
+                    <Value>-</Value>
+                </R>
+            </MICBreackPoint>
+            <!-- Puede tener o no un "Disk content" y puede ser un rango de valores reales-->
+            <ZoneDiameterBreakPoint><!-- mm -->
+                <S>
+                    <Value>-</Value>
+                </S>
+                <R>
+                    <Value>-</Value>
+                </R>
+            </ZoneDiameterBreakPoint>
+        </AntimicrobialAgent>
+        <AntimicrobialAgent name="Ampicillin">
+            <MICBreackPoint>
+                <S>
+                    <Value>8</Value>
+                    <Link>eucast.com</Link>
+                    <Note id="1">Bla bla bla</Note>
+                </S>
+                <R>
+                    <Value>8</Value>
+                    <Link>eucast.com</Link>
+                </R>
+            </MICBreackPoint>
+            <DiskContent>10-10</DiskContent>
+            <ZoneDiameterBreakPoint>
+                <S>
+                    <Value>14</Value>
+                    <Note id="A">Bla bla bla</Note>
+                    <Note id="B">Bla bla bla</Note>
+                </S>
+                <R>
+                    <Value>14</Value>
+                    <Note id="B">Bla bla bla</Note>
+                </R>
+            </ZoneDiameterBreakPoint>
+        </AntimicrobialAgent>
+    </Group>
+</Family>
