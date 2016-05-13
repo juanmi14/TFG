@@ -1,0 +1,9 @@
+diff a/XML/ExcelToXML/src/exceltoxml/Prueba.java b/XML/ExcelToXML/src/exceltoxml/Prueba.java	(rejected hunks)
+@@ -13,6 +13,7 @@
+  *
+  * @author JUANMI
+  * VALE, AHORA SÍ QUE ESTAMOS EN LA BRANCH
++ * SEGUNDA LÍNEA DE LA BRANCH
+  */
+ public class Prueba {
+ 
