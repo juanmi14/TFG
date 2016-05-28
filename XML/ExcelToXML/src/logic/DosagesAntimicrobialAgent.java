@@ -53,4 +53,14 @@ public class DosagesAntimicrobialAgent extends AntimicrobialAgent{
     public void setHighDose(String highDose) {
         this.highDose = highDose;
     }
+
+    @Override
+    public String toString() {
+        String st = "";
+        st += link != null && !link.isEmpty() ? "Link: " + link : "";
+        String sd = standarDose != null && !standarDose.isEmpty() ? standarDose : "-";
+        String hd = highDose != null && !highDose.isEmpty() ? highDose : "-";
+        st += "\nDosages: [" + sd + "," + hd + "]";
+        return super.toString() + "\n" + st; //To change body of generated methods, choose Tools | Templates.
+    }
 }

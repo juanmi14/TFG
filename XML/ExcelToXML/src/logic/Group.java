@@ -63,4 +63,16 @@ public class Group {
     public void setAntimicrobialAgents(List<AntimicrobialAgent> antimicrobialAgents) {
         this.antimicrobialAgents = antimicrobialAgents;
     }
+
+    @Override
+    public String toString() {
+        String st = "";
+        st += "\nName:" + name;
+        st += notes != null && !notes.isEmpty() ? "\nNotes: " + notes : "";
+        st += "\nAntimicrobialAgents: " + antimicrobialAgents;
+        return st;
+    }
+    
+    
+    
 }

@@ -28,4 +28,11 @@ public class Dosages {
     public void setGroups(List<Group> groups) {
         this.groups = groups;
     }
+
+    @Override
+    public String toString() {
+        return groups.toString();
+    }
+    
+    
 }

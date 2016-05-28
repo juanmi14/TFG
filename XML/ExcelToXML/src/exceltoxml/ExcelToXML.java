@@ -42,7 +42,7 @@ public class ExcelToXML {
         try {
             excel = new XSSFWorkbook(new File(args[0]));
             Iterator<Sheet> iSheet = excel.sheetIterator();
-            while (iSheet.hasNext()) {
+            while (iSheet.hasNext()) {//recorro TODO el documento hoja por hoja
                 XSSFSheet hoja = (XSSFSheet) iSheet.next();
                 if (!hoja.getSheetName().equals("Content") && !hoja.getSheetName().equals("Notes")
                         && !hoja.getSheetName().equals("Guidance") && !hoja.getSheetName().equals("Changes")) {
@@ -51,9 +51,9 @@ public class ExcelToXML {
                         extraerDosages(dosages, hoja);
                     } /*else if(hoja.getSheetName().equals("Dosages")){
                         
-                    }*/else {
+                    }*/else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
                         Family familia = extraerFamily(hoja);
-                        if (familia != null && !familia.getGroups().isEmpty()) {
+                        if (familia != null && !familia.getGroups().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
                             families.add(familia);
                         }
                     }
@@ -61,6 +61,9 @@ public class ExcelToXML {
             }
             documento.setDosages(dosages);
             documento.setFamilies(families);
+            
+            
+            System.out.println("Dosages: " + documento.getDosages());
 //            XSSFSheet hoja = excel.getSheetAt(4);
 //            List<String> datos = new ArrayList<String>();
 //
@@ -120,14 +123,14 @@ public class ExcelToXML {
         ArrayList<Group> grupos = new ArrayList<Group>();
         Iterator iFila = hoja.rowIterator();
         int idxF = 0;
-        boolean vengoDeGrupo = false;
+        boolean vengoDeGrupo = false;//así puedo controlar el inicio de un grupo
         Group grupo = new Group();
         ArrayList<AntimicrobialAgent> micros = new ArrayList<AntimicrobialAgent>();
         DosagesAntimicrobialAgent medic;
         while (iFila.hasNext()) {
             XSSFRow fila = (XSSFRow) iFila.next();
-            if (fila != null) {//al haber hecho el do-while es posible que el next llege al final antes de comprobar
-                if (idxF >= 4) {
+            if (fila != null) {
+                if (idxF >= 4) {//fila en la que empieza el contenido (5)
                     //el contenido es:
                     //0-AntimicrobialAgent
                     //1-StandardDose
@@ -140,6 +143,8 @@ public class ExcelToXML {
                         XSSFFont fuente = celdaNombre.getCellStyle().getFont();
                         short grupoS = 10;
                         short medicS = 8;
+                        
+                        String nombre = procesarString(celdaNombre.getStringCellValue());
 
                         if (fuente.getFontHeightInPoints() == grupoS) {
                             if (!vengoDeGrupo) {
@@ -148,12 +153,12 @@ public class ExcelToXML {
                                     micros = new ArrayList<AntimicrobialAgent>();
                                     grupos.add(grupo);
                                 }
-                                grupo = new Group(celdaNombre.getStringCellValue().trim());
+                                grupo = new Group(nombre);
                                 vengoDeGrupo = true;
                             }
                         }
-                        if (fuente.getFontHeightInPoints() == medicS && celdaNombre.getStringCellValue().trim().length() > 0) {
-                            medic = new DosagesAntimicrobialAgent(celdaNombre.getStringCellValue().trim());
+                        if (fuente.getFontHeightInPoints() == medicS && nombre.length() > 0) {
+                            medic = new DosagesAntimicrobialAgent(nombre);
                             String standard = celdaStandard.getStringCellValue().trim();
                             String high = celdaHigh.getStringCellValue().trim();
                             Hyperlink link = celdaNombre.getHyperlink();
