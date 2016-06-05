@@ -9,7 +9,7 @@ package logic;
  *
  * @author Juanmi
  */
-class MICBreakpoint {
+public class MICBreakpoint {
     //elements
     private S s;
     private R r;

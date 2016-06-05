@@ -5,6 +5,7 @@
  */
 package logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Group {
     //attributes
     private String name;
     //elements
-    private List<Note> notes;//notes related to the antimicrobial agents
+    private String notes;//notes related to the antimicrobial agents
     private List<Note> ownNotes;//own possible notes marked as superscript
     private List<AntimicrobialAgent> antimicrobialAgents;
 
@@ -25,7 +26,7 @@ public class Group {
         this.name = name;
     }
     
-    public Group(String name, List<Note> notes, List<Note> ownNotes, List<AntimicrobialAgent> antimicrobialAgents) {
+    public Group(String name, String notes, List<Note> ownNotes, List<AntimicrobialAgent> antimicrobialAgents) {
         this(name);
         this.notes = notes;
         this.ownNotes = ownNotes;
@@ -40,11 +41,11 @@ public class Group {
         this.name = name;
     }
 
-    public List<Note> getNotes() {
+    public String getNotes() {
         return notes;
     }
 
-    public void setNotes(List<Note> notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
     }
 
@@ -64,15 +65,24 @@ public class Group {
         this.antimicrobialAgents = antimicrobialAgents;
     }
 
+    public void addAntimicrobialAgent(AntimicrobialAgent antimicrobialAgent){
+        if(this.antimicrobialAgents == null)
+            this.antimicrobialAgents = new ArrayList<AntimicrobialAgent>();
+        this.antimicrobialAgents.add(antimicrobialAgent);
+    }
+    
     @Override
     public String toString() {
         String st = "";
         st += "\nName:" + name;
+        st += ownNotes != null && !ownNotes.isEmpty() ? " ^ " + ownNotes : "";
         st += notes != null && !notes.isEmpty() ? "\nNotes: " + notes : "";
         st += "\nAntimicrobialAgents: " + antimicrobialAgents;
         return st;
     }
     
-    
+    public boolean hasNotes(){
+        return this.notes != null && !this.notes.isEmpty();
+    }
     
 }

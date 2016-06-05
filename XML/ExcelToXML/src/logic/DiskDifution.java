@@ -9,7 +9,7 @@ package logic;
  *
  * @author Juanmi
  */
-class DiskDifution {
+public class DiskDifution {
     //elements
     private String medium;
     private String inoculum;

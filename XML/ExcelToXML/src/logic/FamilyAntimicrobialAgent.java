@@ -9,7 +9,7 @@ package logic;
  *
  * @author Juanmi
  */
-class FamilyAntimicrobialAgent extends AntimicrobialAgent{
+public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
     //attributes
 //    private String name;
     //elements

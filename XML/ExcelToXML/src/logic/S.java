@@ -5,13 +5,44 @@
  */
 package logic;
 
+import java.util.List;
+
 /**
  *
  * @author Juanmi
  */
-class S {
+public class S {
     //elements
     private String value;
     private String link;
-    private Note note;
+    private List<Note> note;
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public List<Note> getNote() {
+        return note;
+    }
+
+    public void setNote(List<Note> note) {
+        this.note = note;
+    }
+
+    @Override
+    public String toString() {
+        return "S{" + "value=" + value + ", link=" + link + ", note=" + note + '}';
+    }
 }

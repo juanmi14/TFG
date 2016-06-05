@@ -9,7 +9,7 @@ package logic;
  *
  * @author Juanmi
  */
-class ZoneDiameterBreakpoint {
+public class ZoneDiameterBreakpoint {
     //elements
     private S s;
     private R r;

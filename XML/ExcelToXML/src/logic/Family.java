@@ -5,6 +5,7 @@
  */
 package logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ import java.util.List;
 public class Family {
     //attributes
     private String name;
+    private boolean defined;
     //elements
     private List<String> advices;
     private DiskDifution diskDifution;
@@ -23,6 +25,7 @@ public class Family {
     
     public Family(String name){
         this.name = name;
+        this.defined = false;
     }
     
     public Family(String name, List<String> advices, DiskDifution diskDifution, List<Group> groups) {
@@ -40,6 +43,15 @@ public class Family {
         this.name = name;
     }
 
+    public boolean isDefined() {
+        return defined;
+    }
+
+    public void setDefined(boolean defined) {
+        this.defined = defined;
+    }
+    
+    
     public List<String> getAdvices() {
         return advices;
     }
@@ -62,5 +74,16 @@ public class Family {
 
     public void setGroups(List<Group> groups) {
         this.groups = groups;
+    }
+    
+    public void addGroup(Group group){
+        if(this.groups == null)
+            this.groups = new ArrayList<Group>();
+        this.groups.add(group);
+    }
+
+    @Override
+    public String toString() {
+        return "Familia" + "(" + (this.defined ? "D" : "ND") + "): " + this.name;
     }
 }
