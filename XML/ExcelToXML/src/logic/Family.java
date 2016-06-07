@@ -82,6 +82,17 @@ public class Family {
         this.groups.add(group);
     }
 
+    public int getNumAntiMicInGruoups(){
+        int n = 0;
+        if(this.groups != null){
+            for(Group g: groups){
+                if(g.getAntimicrobialAgents() != null)
+                    n += g.getAntimicrobialAgents().size();
+            }
+        }
+        return n;
+    }
+    
     @Override
     public String toString() {
         return "Familia" + "(" + (this.defined ? "D" : "ND") + "): " + this.name;

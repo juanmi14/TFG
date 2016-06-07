@@ -75,7 +75,7 @@ public class Group {
     public String toString() {
         String st = "";
         st += "\nName:" + name;
-        st += ownNotes != null && !ownNotes.isEmpty() ? " ^ " + ownNotes : "";
+        st += ownNotes != null && !ownNotes.isEmpty() ? " (" + ownNotes.size() + ")" : "";
         st += notes != null && !notes.isEmpty() ? "\nNotes: " + notes : "";
         st += "\nAntimicrobialAgents: " + antimicrobialAgents;
         return st;

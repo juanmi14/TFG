@@ -37,4 +37,10 @@ public class Note {
     public void setValue(String value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + id + "\nValue: " + value;
+    }
+    
 }

@@ -5,6 +5,8 @@
  */
 package logic;
 
+import java.util.List;
+
 /**
  *
  * @author Juanmi
@@ -16,6 +18,7 @@ public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
     private String link;
     private MICBreakpoint micBreakpoint;
     private String diskContent;
+    private List<Note> notes;
     private ZoneDiameterBreakpoint zoneDiameterBreakpoint;
 
     public FamilyAntimicrobialAgent(){}
@@ -24,11 +27,12 @@ public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
         super(name);
     }
     
-    public FamilyAntimicrobialAgent(String name, String link, MICBreakpoint micBreakpoint, String diskContent, ZoneDiameterBreakpoint zoneDiameterBreakpoint) {
+    public FamilyAntimicrobialAgent(String name, String link, MICBreakpoint micBreakpoint, String diskContent, List<Note> notes, ZoneDiameterBreakpoint zoneDiameterBreakpoint) {
         this(name);
         this.link = link;
         this.micBreakpoint = micBreakpoint;
         this.diskContent = diskContent;
+        this.notes = notes;
         this.zoneDiameterBreakpoint = zoneDiameterBreakpoint;
     }
 
@@ -54,6 +58,14 @@ public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
 
     public void setDiskContent(String diskContent) {
         this.diskContent = diskContent;
+    }
+    
+    public List<Note> getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
     public ZoneDiameterBreakpoint getZoneDiameterBreakpoint() {
