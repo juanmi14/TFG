@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
+
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  *
@@ -11,10 +8,15 @@ package logic;
  */
 public class DiskDifution {
     //elements
+    @XStreamAlias("Medium")
     private String medium;
+    @XStreamAlias("Inoculum")
     private String inoculum;
+    @XStreamAlias("Incubation")
     private String incubation;
+    @XStreamAlias("Reading")
     private String reading;
+    @XStreamAlias("QualityControl")
     private String qualityControl;
 
     public DiskDifution(){}

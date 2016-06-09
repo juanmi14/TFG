@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +12,14 @@ import java.util.List;
  */
 public class Group {
     //attributes
+    @XStreamAsAttribute
     private String name;
     //elements
+    @XStreamAlias("Notes")
     private String notes;//notes related to the antimicrobial agents
+    @XStreamAlias("OwnNotes")
     private List<Note> ownNotes;//own possible notes marked as superscript
+    @XStreamImplicit
     private List<AntimicrobialAgent> antimicrobialAgents;
 
     public Group(){}

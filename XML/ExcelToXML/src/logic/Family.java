@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +12,16 @@ import java.util.List;
  */
 public class Family {
     //attributes
+    @XStreamAsAttribute
     private String name;
+    @XStreamAsAttribute
     private boolean defined;
     //elements
+    @XStreamImplicit(itemFieldName="Advice")
     private List<String> advices;
+    @XStreamAlias("DiskDifution")
     private DiskDifution diskDifution;
+    @XStreamImplicit(itemFieldName="Group")
     private List<Group> groups;
 
     public Family(){}

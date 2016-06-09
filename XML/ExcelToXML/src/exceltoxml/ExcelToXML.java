@@ -1,10 +1,12 @@
 package exceltoxml;
 
+import com.thoughtworks.xstream.XStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,44 +22,55 @@ import logic.*;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 
+import javax.xml.XMLConstants;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.*;
+import java.util.List;
 /**
  *
  * @author Juanmi
  */
 public class ExcelToXML {
-
+    private static final String SCHEMA_FILE = "schemaEUCAST.xsd";
+    private static final String XML_FILE = "EUCAST_Breakpoints.xml";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        XSSFWorkbook excel = null;
-        BreakpointEUCAST documento = new BreakpointEUCAST(2016);
-        Dosages dosages = new Dosages();
-        ArrayList<Family> families = new ArrayList<Family>();
-        try {
-            excel = new XSSFWorkbook(new File(args[0]));
-            Iterator<Sheet> iSheet = excel.sheetIterator();
-            while (iSheet.hasNext()) {//recorro TODO el documento hoja por hoja
-                XSSFSheet hoja = (XSSFSheet) iSheet.next();
-                if (!hoja.getSheetName().equals("Content") && !hoja.getSheetName().equals("Notes")
-                        && !hoja.getSheetName().equals("Guidance") && !hoja.getSheetName().equals("Changes")) {
+        if (args.length > 0) {
+            if (!args[0].equals("?")) {
+                //DE EXCEL A JAVA
+                XSSFWorkbook excel = null;
+                BreakpointEUCAST documento = new BreakpointEUCAST(2016);
+                Dosages dosages = new Dosages();
+                ArrayList<Family> families = new ArrayList<Family>();
+                try {
+                    excel = new XSSFWorkbook(new File(args[0]));
+                    Iterator<Sheet> iSheet = excel.sheetIterator();
+                    while (iSheet.hasNext()) {//recorro TODO el documento hoja por hoja
+                        XSSFSheet hoja = (XSSFSheet) iSheet.next();
+                        if (!hoja.getSheetName().equals("Content") && !hoja.getSheetName().equals("Notes")
+                                && !hoja.getSheetName().equals("Guidance") && !hoja.getSheetName().equals("Changes")) {
 //                    System.out.println(hoja.getSheetName());
-                    if (hoja.getSheetName().equals("Dosages")) {
-                        extraerDosages(dosages, hoja);
-                    } /*else if(hoja.getSheetName().equals("Dosages")){
+                            if (hoja.getSheetName().equals("Dosages")) {
+                                extraerDosages(dosages, hoja);
+                            } /*else if(hoja.getSheetName().equals("Dosages")){
                         
-                    }*/else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
-                        Family familia = extraerFamily(hoja);
-                        if (familia != null && familia.getGroups() != null && !familia.getGroups().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
-                            families.add(familia);
+                    }*/ else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
+                                Family familia = extraerFamily(hoja);
+                                if (familia != null && familia.getGroups() != null && !familia.getGroups().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
+                                    families.add(familia);
+                                }
+                            }
                         }
                     }
-                }
-            }
-            documento.setDosages(dosages);
-            documento.setFamilies(families);
-            
-            
+                    documento.setDosages(dosages);
+                    documento.setFamilies(families);
+
+                    //DE JAVA A XML
+                    crearXML(documento, (args.length > 1 ? args[1] : XML_FILE), (args.length > 2 ? args[1] : SCHEMA_FILE));
+
 //            System.out.println(">Dosages: " + documento.getDosages());
 //            System.out.println(">Families: " + documento.getFamilies());
 //            XSSFSheet hoja = excel.getSheetAt(4);
@@ -83,25 +96,37 @@ public class ExcelToXML {
 //            }
 //            System.out.println(datos);
 //            System.out.println(links);
-
 //            XSSFCell b8 = getCelda(hoja, Columnas.E, 11);
 //            XSSFRichTextString valor = b8.getRichStringCellValue();
 //            if (valor.numFormattingRuns() > 1) {
 //                System.out.println("valor: " + getValor(valor));
 //                System.out.println("superindice: " + getSuperIndice(valor));
 //            }
-        } catch (IOException ex) {
-            Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvalidFormatException ex) {
-            Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (excel != null) {
-                try {
-                    excel.close();
                 } catch (IOException ex) {
                     Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InvalidFormatException ex) {
+                    Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
+                } finally {
+                    if (excel != null) {
+                        try {
+                            excel.close();
+                        } catch (IOException ex) {
+                            Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
                 }
+            } else {
+                System.out.println("Puedes introducir los siguientes argumentos:");
+                System.out.println("-arg1: nombre del documento Excel");
+                System.out.println("-arg2: nombre que tendrá el documento XML generado");
+                System.out.println("-arg3: nombre del XML Schema contra el que validar el documento XML generado");
             }
+        } else {
+            System.out.println("Debes introducir por lo menos el nombre del documento Excel.");
+            System.out.println("Puedes introducir los siguientes argumentos:");
+            System.out.println("-arg1: nombre del documento Excel");
+            System.out.println("-arg2: nombre que tendrá el documento XML generado");
+            System.out.println("-arg3: nombre del XML Schema contra el que validar el documento XML generado");
         }
     }
 
@@ -167,9 +192,13 @@ public class ExcelToXML {
                             Hyperlink link = celdaNombre.getHyperlink();
                             if (standard != null && !standard.isEmpty()) {
                                 medic.setStandarDose(standard);
+                            }else{
+                                medic.setStandarDose("-");
                             }
                             if (high != null && !high.isEmpty()) {
                                 medic.setHighDose(high);
+                            }else{
+                                medic.setHighDose("-");
                             }
                             if (link != null) {
                                 medic.setLink(link.getAddress());
@@ -233,7 +262,7 @@ public class ExcelToXML {
 //        }else{
 //            System.out.println(procesarString(familiName) + ": NO DEFINIDO");
 //        }
-        System.out.println(familia + " G(" + (familia.getGroups() != null ? familia.getGroups().size() : "0") + "), Am(" + familia.getNumAntiMicInGruoups() + ")");
+//        System.out.println(familia + " G(" + (familia.getGroups() != null ? familia.getGroups().size() : "0") + "), Am(" + familia.getNumAntiMicInGruoups() + ")");
         return familia;
     }
 
@@ -271,7 +300,7 @@ public class ExcelToXML {
         while (iFila.hasNext()) {
             XSSFRow fila = (XSSFRow) iFila.next();
             if (fila != null) {
-                if (idxF >= 4) {//fila en la que empieza el contenido (5)
+                if (idxF >= 3) {//fila en la que empieza el contenido (5)
                     XSSFCell celdaNombre = fila.getCell(0);
                     if (celdaNombre != null) {
                         //el contenido es para cada agente
@@ -387,7 +416,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                s.setNote(listaNotas);
+                                s.setNotes(listaNotas);
                             }
                             s.setLink((linkCelda != null ? linkCelda.getAddress() : null));
                             
@@ -417,7 +446,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                r.setNote(listaNotas);
+                                r.setNotes(listaNotas);
                             }
                             r.setLink((linkCelda != null ? linkCelda.getAddress() : null));
                             
@@ -467,7 +496,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                s.setNote(listaNotas);
+                                s.setNotes(listaNotas);
                             }
                             s.setLink((linkCelda != null ? linkCelda.getAddress() : null));
 
@@ -497,7 +526,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                r.setNote(listaNotas);
+                                r.setNotes(listaNotas);
                             }
                             r.setLink((linkCelda != null ? linkCelda.getAddress() : null));
                             
@@ -574,21 +603,21 @@ public class ExcelToXML {
                     if(iSt.contains("/")){
                         id = iSt.substring(0, iSt.indexOf("/"));
                         String id2 = iSt.substring(iSt.indexOf("/") + 1);
-                        mapa.put(id2, s.substring(s.indexOf(".") + 1));
+                        mapa.put(id2, s.substring(s.indexOf(".") + 1).trim());
                         lastId = id;
                         lastId2 = id2;
                     }
-                    mapa.put(id, s.substring(s.indexOf(".") + 1));
+                    mapa.put(id, s.substring(s.indexOf(".") + 1).trim());
                 }else{//no empieza por ***. -> forma parte de la/las nota/s anterior/es
                     if(!lastId.isEmpty()){
                         String cnt = mapa.get(lastId);
                         //mapa.remove(lastId);
-                        mapa.put(lastId, cnt + s);
+                        mapa.put(lastId, (cnt + s).trim());
                     }
                     if(!lastId2.isEmpty()){
                         String cnt = mapa.get(lastId2);
                         //mapa.remove(lastId);
-                        mapa.put(lastId2, cnt + s);
+                        mapa.put(lastId2, (cnt + s).trim());
                     }
                 }
             }
@@ -654,6 +683,9 @@ public class ExcelToXML {
                             //hay casos particulares en que unas notas tienen tamaño 10, hay que controlarlo
                             if(fila.getCell(1) != null && isGroupCell(celdaNombre)){
                                 if(!vengoDeGrupo){//cuando detecto que llego a un nuevo grupo, guardo el anterior
+                                    String ng = grupo.getName();
+                                    if(ng == null || ng.isEmpty())
+                                        grupo.setName("-");
                                     familia.addGroup(grupo);
                                 }
                                 grupo = new Group();
@@ -763,7 +795,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                s.setNote(listaNotas);
+                                s.setNotes(listaNotas);
                             }
                             s.setLink((linkCelda != null ? linkCelda.getAddress() : null));
                             
@@ -793,7 +825,7 @@ public class ExcelToXML {
                                 for (String n : nts) {
                                     listaNotas.add(new Note(n, mapaNotas.get(n)));
                                 }
-                                r.setNote(listaNotas);
+                                r.setNotes(listaNotas);
                             }
                             r.setLink((linkCelda != null ? linkCelda.getAddress() : null));
                             
@@ -848,6 +880,9 @@ public class ExcelToXML {
             }
         }
         //hay que añadir el último grupo
+        String ng = grupo.getName();
+        if(ng == null || ng.isEmpty())
+            grupo.setName("-");
         familia.addGroup(grupo);
     }
 
@@ -875,6 +910,61 @@ public class ExcelToXML {
             }
         }
         return lNotas;
+    }
+
+    private static void crearXML(BreakpointEUCAST documento, String nombreFichero, String nombreSchema) {
+        //creo el objeto xstream
+        XStream xstream = new XStream();
+        xstream.alias("BreakpointEUCAST", BreakpointEUCAST.class);//elemento raíz
+        xstream.autodetectAnnotations(Boolean.TRUE);//analizar las anotaciones de cada objeto
+        xstream.aliasSystemAttribute(null, "class");//eliminar el atributo automático "class" en los casos de herencia
+        
+        //obtengo en un String el documento parseado
+        String xml = xstream.toXML(documento);
+//        System.out.println(xml);
+        
+        //lo convierto en fichero con el nombre suministrado como segundo argumento o por defecto
+        try {
+            OutputStreamWriter os = new OutputStreamWriter(new FileOutputStream(nombreFichero), "UTF-8");
+            os.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+            os.append(xml);
+            os.close();
+            System.out.println("Creación correcta del fichero XML \"" + nombreFichero + "\"");
+        } catch (IOException ex) {
+            System.out.println("Fallo en la creación o escritura del fichero \"" + nombreFichero + "\"");
+        }
+        
+        //valido el documento generado contra el Schema
+        if(validarXML(nombreFichero, nombreSchema)){
+            System.out.println("Extracción y validación correctas.");
+        }else{
+            System.out.println("Validación incorrecta.");
+        }
+    }
+
+    private static boolean validarXML(String nombreFichero, String nombreSchema) {
+        boolean ok;
+        try {
+            //XML a validar
+            Source xmlFile = new StreamSource(new File(nombreFichero));
+
+            //Esquema con el que comparar
+            Source schemaFile = new StreamSource(new File(nombreSchema));
+
+            //Preparación del esquema
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = schemaFactory.newSchema(schemaFile);
+
+            //Creación del validador
+            Validator validator = schema.newValidator();//Validación del XML
+
+            validator.validate(xmlFile);
+
+            ok = true;
+        } catch (Exception e) {
+            ok = false;
+        }
+        return ok;
     }
     
     private enum Columnas {

@@ -1,24 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.util.List;
 
 /**
  *
  * @author Juanmi
  */
+@XStreamAlias("FamilyAntimicrobialAgent")
 public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
     //attributes
 //    private String name;
     //elements
+    @XStreamAlias("Link")
     private String link;
-    private MICBreakpoint micBreakpoint;
-    private String diskContent;
+    @XStreamAlias("Notes")
     private List<Note> notes;
+    @XStreamAlias("MICBreakpoint")
+    private MICBreakpoint micBreakpoint;
+    @XStreamAlias("DiskContent")
+    private String diskContent;
+    @XStreamAlias("ZoneDiameterBreakpoint")
     private ZoneDiameterBreakpoint zoneDiameterBreakpoint;
 
     public FamilyAntimicrobialAgent(){}

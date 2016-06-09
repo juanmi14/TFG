@@ -1,5 +1,8 @@
 package logic;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.List;
 
 /**
@@ -8,9 +11,12 @@ import java.util.List;
  */
 public class BreakpointEUCAST {
     //attributes
+    @XStreamAsAttribute
     private int year;
     //elements
+    @XStreamImplicit(itemFieldName="Family")
     private List<Family> families;
+    @XStreamAlias("Dosages")
     private Dosages dosages;
 
     public BreakpointEUCAST(){

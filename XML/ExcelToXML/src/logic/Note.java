@@ -1,21 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
+
+import com.thoughtworks.xstream.annotations.*;
+import converters.NoteConverter;
 
 /**
  *
  * @author Juanmi
  */
+@XStreamAlias("Note")
+@XStreamConverter(NoteConverter.class)
 public class Note {
     //attributes
+//    @XStreamAsAttribute
     private String id;
     //content
-    private String value;
+    
+    private String value = "-";
 
     public Note(){}
+    
+    public Note(String value){
+        this.id = "0";
+        this.value = value;
+    }
     
     public Note(String id, String value) {
         this.id = id;
