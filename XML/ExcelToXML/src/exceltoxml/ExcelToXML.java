@@ -27,6 +27,8 @@ import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  *
  * @author Juanmi
@@ -50,14 +52,12 @@ public class ExcelToXML {
                     Iterator<Sheet> iSheet = excel.sheetIterator();
                     while (iSheet.hasNext()) {//recorro TODO el documento hoja por hoja
                         XSSFSheet hoja = (XSSFSheet) iSheet.next();
+                        String sn = hoja.getSheetName();
                         if (!hoja.getSheetName().equals("Content") && !hoja.getSheetName().equals("Notes")
                                 && !hoja.getSheetName().equals("Guidance") && !hoja.getSheetName().equals("Changes")) {
-//                    System.out.println(hoja.getSheetName());
                             if (hoja.getSheetName().equals("Dosages")) {
                                 extraerDosages(dosages, hoja);
-                            } /*else if(hoja.getSheetName().equals("Dosages")){
-                        
-                    }*/ else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
+                            }else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
                                 Family familia = extraerFamily(hoja);
                                 if (familia != null && familia.getGroups() != null && !familia.getGroups().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
                                     families.add(familia);
@@ -70,38 +70,6 @@ public class ExcelToXML {
 
                     //DE JAVA A XML
                     crearXML(documento, (args.length > 1 ? args[1] : XML_FILE), (args.length > 2 ? args[1] : SCHEMA_FILE));
-
-//            System.out.println(">Dosages: " + documento.getDosages());
-//            System.out.println(">Families: " + documento.getFamilies());
-//            XSSFSheet hoja = excel.getSheetAt(4);
-//            List<String> datos = new ArrayList<String>();
-//
-//            List<String> links = new ArrayList<String>();
-//
-//            //recorrido
-//            Iterator filas = hoja.rowIterator();
-//            while (filas.hasNext()) {
-//                XSSFRow fila = (XSSFRow) filas.next();
-//                Iterator celdas = fila.cellIterator();
-//                while (celdas.hasNext()) {
-//                    XSSFCell celda = (XSSFCell) celdas.next();
-//                    System.out.print(celda.toString() + " || ");
-//                    datos.add(String.valueOf(celda));
-//                    Hyperlink linkAddress = celda.getHyperlink();
-//                    if (linkAddress != null) {
-//                        links.add(linkAddress.getAddress());
-//                    }
-//                }
-//                System.out.println();
-//            }
-//            System.out.println(datos);
-//            System.out.println(links);
-//            XSSFCell b8 = getCelda(hoja, Columnas.E, 11);
-//            XSSFRichTextString valor = b8.getRichStringCellValue();
-//            if (valor.numFormattingRuns() > 1) {
-//                System.out.println("valor: " + getValor(valor));
-//                System.out.println("superindice: " + getSuperIndice(valor));
-//            }
                 } catch (IOException ex) {
                     Logger.getLogger(ExcelToXML.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InvalidFormatException ex) {
@@ -222,18 +190,21 @@ public class ExcelToXML {
         //lo primero es detectar si es DEFINIDO o NO DEFINIDO
         //ya que tienen contenido diferente por lo que no se procesan igual
         //las NO DEFINIDO tienen el disk diffusion en D3 en lugar de G3
-        familia = new Family(procesarString(getCelda(hoja, Columnas.A, 1).getStringCellValue()));
+        
+        XSSFCell celdaNombrefamilia = getCelda(hoja, Columnas.A, 1);
+        String nom = procesarString(celdaNombrefamilia.getStringCellValue());
+        String tch = getValoresNotasTachados(celdaNombrefamilia.getRichStringCellValue());
+        if(tch != null && !tch.isEmpty())
+            nom = nom.substring(0, nom.indexOf(tch) - 1);
+        familia = new Family(nom);
         XSSFCell celdaDisk = getCelda(hoja, Columnas.G, 3);
         if (celdaDisk != null) {
             familia.setDefined(celdaDisk.getStringCellValue().trim().contains("Disk diffusion"));
         }
         if(familia.isDefined()){
             procesarDefinida(familia, celdaDisk, hoja);
-//            System.out.println(">>----------------------------" + familia + "----------------------------<<");
-//            System.out.println(familia.getGroups());
         }else{
             procesarNoDefinida(familia, hoja);
-//            System.out.println(">>----------------------------" + familia + "----------------------------<<");
         }
         
         //puede tener advices
@@ -537,22 +508,35 @@ public class ExcelToXML {
                             
                             medic = new FamilyAntimicrobialAgent();
                             XSSFRichTextString v = celdaNombre.getRichStringCellValue();
-                                if(v.numFormattingRuns() > 1){//si tiene superscript
-                                    nombre = getValor(v);
-                                    String ss = getSuperIndice(v);
-                                    if (ss != null && !ss.isEmpty()) {
-                                        listaNotas = new ArrayList<Note>();
-                                        List<String> nts = obtenerIndiceNotas(ss);
-                                        for (String n : nts) {
-                                            if(n != null && !n.trim().isEmpty())
-                                                listaNotas.add(new Note(n, mapaNotas.get(n)));
+                            if(v.numFormattingRuns() > 1){//si tiene superscript
+                                nombre = getValor(v);
+                                String ss = getSuperIndice(v);
+                                if (ss != null && !ss.isEmpty()) {
+                                    listaNotas = new ArrayList<Note>();
+                                    List<String> nts = obtenerIndiceNotas(ss);
+                                    if(nts.isEmpty()){//es cursiva, no superscript
+                                        nombre = procesarString(nombre + ss);
+                                        Pattern p = Pattern.compile("-?\\d+");
+                                        Matcher m = p.matcher(nombre);
+                                        while (m.find()) {
+                                            String n = m.group();
+                                            nts.add(n);
+                                            nombre = nombre.replace(n, "");
                                         }
-                                        medic.setNotes(listaNotas);
                                     }
+                                    for (String n : nts) {
+                                        if(n != null && !n.trim().isEmpty())
+                                            listaNotas.add(new Note(n, mapaNotas.get(n)));
+                                    }
+                                    medic.setNotes(listaNotas);
                                 }
-                                else
-                                    nombre = procesarString(celdaNombre.getStringCellValue());
+                            }
+                            else
+                                nombre = procesarString(celdaNombre.getStringCellValue());
                             
+                                
+                            if(nombre.contains("Ceftaroline"))
+                                nombre = nombre + "";
                             medic.setName(nombre);
                             medic.setLink((celdaNombre.getHyperlink() != null ? celdaNombre.getHyperlink().getAddress() : null));
                             medic.setMicBreakpoint(mbp);
@@ -889,7 +873,7 @@ public class ExcelToXML {
     private static String procesarString(String valor){
         String procesado = "";
         if(valor != null){
-            procesado = valor.trim().replaceAll("\n", " ").replaceAll("\t", " ");
+            procesado = valor.replaceAll("\n", " ").replaceAll("\t", " ").trim();
         }
         return procesado;
     }
@@ -981,24 +965,11 @@ public class ExcelToXML {
         return val;
     }
     
-//    private static String getValorNotas(XSSFRichTextString valor) {
-//        String val = "";
-//        int lenVal = 0, iVal = 0;
-//        boolean tachado = false;
-//        for (int i = 0; i < valor.numFormattingRuns() - 1; i++) {
-//            lenVal = valor.getLengthOfFormattingRun(i);
-//            iVal = valor.getIndexOfFormattingRun(i);
-//            if(!valor.getFontAtIndex(iVal).getStrikeout()){
-//                val += valor.toString().substring(iVal, lenVal + iVal);
-//            }else{
-//                tachado = true;
-//            }
-//        }
-//        if(tachado){
-//            val += valor.toString().substring(iVal + 1, lenVal + iVal + 5);
-//        }
-//        return val;
-//    }
+    private static String getSuperIndice(XSSFRichTextString valor) {
+        int lenSuper = valor.getLengthOfFormattingRun(valor.numFormattingRuns() - 1);
+        int iSuper = valor.getIndexOfFormattingRun(valor.numFormattingRuns() - 1);
+        return valor.toString().substring(iSuper, lenSuper + iSuper);
+    }
     
     private static String getValoresNotasTachados(XSSFRichTextString valor){
         String val = "";
@@ -1012,13 +983,34 @@ public class ExcelToXML {
         return val;
     }
     
-    
-
-    private static String getSuperIndice(XSSFRichTextString valor) {
-        int lenSuper = valor.getLengthOfFormattingRun(valor.numFormattingRuns() - 1);
-        int iSuper = valor.getIndexOfFormattingRun(valor.numFormattingRuns() - 1);
-        return valor.toString().substring(iSuper, lenSuper + iSuper);
+    private static String getValoresCursiva(XSSFRichTextString valor){
+        String val = "";
+        int lenVal = 0, iVal = 0;
+        for (int i = 0; i < valor.numFormattingRuns() - 1; i++) {
+            lenVal = valor.getLengthOfFormattingRun(i);
+            iVal = valor.getIndexOfFormattingRun(i);
+            if(valor.getFontAtIndex(iVal).getItalic())
+                val += valor.toString().substring(iVal, lenVal + iVal);
+        }
+        return val;
     }
+    
+    private static boolean hasItalic(XSSFRichTextString valor){
+        boolean has = false;
+        int iVal = 0;
+        for (int i = 0; i < valor.numFormattingRuns() - 1; i++) {
+            iVal = valor.getIndexOfFormattingRun(i);
+            if(valor.getFontAtIndex(iVal).getItalic()){
+                has = true;
+                break;
+            }
+        }
+        return has;
+    }
+    
+//    private static boolean processItalic(XSSFRichTextString valor){
+//        
+//    }
 }
 
 //public static void main(String[] args) {

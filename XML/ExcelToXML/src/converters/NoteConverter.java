@@ -40,6 +40,12 @@ public class NoteConverter implements Converter{
 
     @Override
     public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext uc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Note note = new Note();
+//        reader.moveDown();
+        note.setId(reader.getAttribute(0));
+        note.setValue(reader.getValue());
+//        reader.moveUp();
+        
+        return note;
     }
 }

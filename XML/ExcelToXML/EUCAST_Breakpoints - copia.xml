@@ -408,7 +408,7 @@ D. Ignore isolated colonies within the inhibition zone for E. coli.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only) E. coli, Klebsiella spp. and P. mirabilis">
+      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)&#xa;E. coli, Klebsiella spp. and ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -486,7 +486,7 @@ D. Ignore isolated colonies within the inhibition zone for E. coli.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cefalexin   (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Cefalexin  ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -766,11 +766,9 @@ D. Ignore isolated colonies within the inhibition zone for E. coli.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cefuroxime iv,  E. coli, Klebsiella spp. and P. mirabilis">
+      <FamilyAntimicrobialAgent name="Cefuroxime iv4, &#xa;E. coli, Klebsiella spp. and ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Cefuroxime_iv_Rationale_Document_1.0_2010Nov.pdf</Link>
-        <Notes>
-          <Note id="4">Breakpoints are based on high dose therapy (1.5 g x 3).</Note>
-        </Notes>
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>8</Value>
@@ -1699,7 +1697,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Fosfomycin oral (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Fosfomycin oral">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Fosfomycin_trometamol_rationale_1.0_20130203.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -1792,7 +1790,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), E. coli">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -1853,7 +1851,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -2217,7 +2215,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -2501,7 +2499,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Ceftolozane-tazobactam, P. aeruginosa">
+      <FamilyAntimicrobialAgent name="Ceftolozane-tazobactam, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -3450,7 +3448,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -3511,7 +3509,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -3881,7 +3879,7 @@ A. Ignore haze or fine growth within the inhibition zone (see pictures below).</
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5093,7 +5091,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5154,7 +5152,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5218,7 +5216,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
       <OwnNotes>
         <Note id="1">Most staphylococci are penicillinase producers, which are resistant to benzylpenicillin, phenoxymethylpenicillin, ampicillin, amoxicillin, piperacillin and ticarcillin. Isolates negative for penicillinase and susceptible to methicillin can be reported susceptible to these agents. Isolates positive for penicillinase and methicillin susceptible are susceptible to beta-lactamase inhibitor combinations and isoxazolylpenicillins (oxacillin, cloxacillin, dicloxacillin and flucloxacillin).Methicillin resistant isolates are, with few exceptions, resistant to all beta-lactam agents.</Note>
       </OwnNotes>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin, S. aureus">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin, ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5253,7 +5251,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin, S. lugdunensis">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin, ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5286,7 +5284,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin, Coagulase-negative staphylococci">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin,">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5319,7 +5317,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Ampicillin, S. saprophyticus">
+      <FamilyAntimicrobialAgent name="Ampicillin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -5755,7 +5753,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -5997,7 +5995,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cefoxitin (screen), S. aureus, S. lugdunensis and  S. saprophyticus">
+      <FamilyAntimicrobialAgent name="Cefoxitin (screen), S. aureus, S. lugdunensis and &#xa;">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6031,7 +6029,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cefoxitin (screen), Coagulase-negative staphylococci other than S. lugdunensis and S. saprophyticus">
+      <FamilyAntimicrobialAgent name="Cefoxitin (screen), Coagulase-negative staphylococci other than S. lugdunensis and">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6065,7 +6063,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cefoxitin (screen), S. pseudintermedius">
+      <FamilyAntimicrobialAgent name="Cefoxitin (screen), ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6130,7 +6128,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Ceftaroline, S. aureus">
+      <FamilyAntimicrobialAgent name="Ceftaroline, ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Ceftaroline_Rationale_document_v1.0_20141010.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -6202,7 +6200,7 @@ B. For S. aureus, disk diffusion is more reliable than MIC determination for det
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Ceftobiprole, S. aureus">
+      <FamilyAntimicrobialAgent name="Ceftobiprole, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6614,7 +6612,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Norfloxacin (screen)">
+      <FamilyAntimicrobialAgent name="Norfloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Norfloxacin_rationale_1.4.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -6677,10 +6675,8 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
       <OwnNotes>
         <Note id="1">Aminoglycoside breakpoints are based on once-daily administration.</Note>
       </OwnNotes>
-      <FamilyAntimicrobialAgent name="Amikacin, S. aureus">
-        <Notes>
-          <Note id="2">Resistance to amikacin is most reliably determined by testing with kanamycin (MIC &gt;8 mg/L). For S. aureus, the corresponding zone diameter is  &lt;18 mm).</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Amikacin2, ">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>8</Value>
@@ -6699,10 +6695,8 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Amikacin, Coagulase-negative staphylococci">
-        <Notes>
-          <Note id="2">Resistance to amikacin is most reliably determined by testing with kanamycin (MIC &gt;8 mg/L). For S. aureus, the corresponding zone diameter is  &lt;18 mm).</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Amikacin2, ">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>8</Value>
@@ -6721,7 +6715,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Gentamicin, S. aureus">
+      <FamilyAntimicrobialAgent name="Gentamicin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6741,47 +6735,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Gentamicin, Coagulase-negative staphylococci">
-        <Notes/>
-        <MICBreakpoint>
-          <S>
-            <Value>1</Value>
-          </S>
-          <R>
-            <Value>1</Value>
-          </R>
-        </MICBreakpoint>
-        <DiskContent>10</DiskContent>
-        <ZoneDiameterBreakpoint>
-          <S>
-            <Value>22</Value>
-          </S>
-          <R>
-            <Value>22</Value>
-          </R>
-        </ZoneDiameterBreakpoint>
-      </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Netilmicin, S. aureus">
-        <Notes/>
-        <MICBreakpoint>
-          <S>
-            <Value>1</Value>
-          </S>
-          <R>
-            <Value>1</Value>
-          </R>
-        </MICBreakpoint>
-        <DiskContent>10</DiskContent>
-        <ZoneDiameterBreakpoint>
-          <S>
-            <Value>18</Value>
-          </S>
-          <R>
-            <Value>18</Value>
-          </R>
-        </ZoneDiameterBreakpoint>
-      </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Netilmicin, Coagulase-negative staphylococci">
+      <FamilyAntimicrobialAgent name="Gentamicin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6801,7 +6755,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Tobramycin, S. aureus">
+      <FamilyAntimicrobialAgent name="Netilmicin,">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -6821,7 +6775,47 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Tobramycin, Coagulase-negative staphylococci">
+      <FamilyAntimicrobialAgent name="Netilmicin, ">
+        <Notes/>
+        <MICBreakpoint>
+          <S>
+            <Value>1</Value>
+          </S>
+          <R>
+            <Value>1</Value>
+          </R>
+        </MICBreakpoint>
+        <DiskContent>10</DiskContent>
+        <ZoneDiameterBreakpoint>
+          <S>
+            <Value>22</Value>
+          </S>
+          <R>
+            <Value>22</Value>
+          </R>
+        </ZoneDiameterBreakpoint>
+      </FamilyAntimicrobialAgent>
+      <FamilyAntimicrobialAgent name="Tobramycin, ">
+        <Notes/>
+        <MICBreakpoint>
+          <S>
+            <Value>1</Value>
+          </S>
+          <R>
+            <Value>1</Value>
+          </R>
+        </MICBreakpoint>
+        <DiskContent>10</DiskContent>
+        <ZoneDiameterBreakpoint>
+          <S>
+            <Value>18</Value>
+          </S>
+          <R>
+            <Value>18</Value>
+          </R>
+        </ZoneDiameterBreakpoint>
+      </FamilyAntimicrobialAgent>
+      <FamilyAntimicrobialAgent name="Tobramycin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -7656,7 +7650,7 @@ A. Use an MIC method.
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only),  S. saprophyticus">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), &#xa;">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -7717,7 +7711,7 @@ A. Use an MIC method.
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -8118,7 +8112,7 @@ A. Use an MIC method.
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -8578,7 +8572,7 @@ A. Use an MIC method.
     <Group name="Fluoroquinolones">
       <Notes>A. The norfloxacin disk diffusion test can be used to screen for fluoroquinolone resistance. See Note B.
 B. Susceptibility of ciprofloxacin and levofloxacin can be inferred from the norfloxacin susceptibility.</Notes>
-      <FamilyAntimicrobialAgent name="Ciprofloxacin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Ciprofloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Ciprofloxacin_rationale_1.9.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -8605,7 +8599,7 @@ B. Susceptibility of ciprofloxacin and levofloxacin can be inferred from the nor
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Levofloxacin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Levofloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Levofloxacin_rationale_1.5.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -8671,7 +8665,7 @@ B. Susceptibility of ciprofloxacin and levofloxacin can be inferred from the nor
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Norfloxacin (screen)">
+      <FamilyAntimicrobialAgent name="Norfloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Norfloxacin_rationale_1.4.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -8762,7 +8756,7 @@ Positive test: Isolates with streptomycin MIC &gt;512 mg/L or a zone diameter &l
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Gentamicin  (test for high-level aminoglycoside resistance)">
+      <FamilyAntimicrobialAgent name="Gentamicin &#xa;">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Gentamicin_rationale_1.2_0906.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -9113,7 +9107,7 @@ Positive test: Isolates with streptomycin MIC &gt;512 mg/L or a zone diameter &l
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Quinupristin-dalfopristin, E. faecium">
+      <FamilyAntimicrobialAgent name="Quinupristin-dalfopristin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -9444,7 +9438,7 @@ Positive test: Isolates with streptomycin MIC &gt;512 mg/L or a zone diameter &l
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), E. faecalis">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -9505,7 +9499,7 @@ Positive test: Isolates with streptomycin MIC &gt;512 mg/L or a zone diameter &l
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -9848,7 +9842,7 @@ The breakpoints apply to streptococcus groups A, C and G only.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Phenoxymethylpenicillin Streptococcus groups A, C and G">
+      <FamilyAntimicrobialAgent name="Phenoxymethylpenicillin&#xa;">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Phenoxymethylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -9881,7 +9875,7 @@ The breakpoints apply to streptococcus groups A, C and G only.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Oxacillin  Streptococcus groups A, C and G">
+      <FamilyAntimicrobialAgent name="Oxacillin &#xa;">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -9901,39 +9895,7 @@ The breakpoints apply to streptococcus groups A, C and G only.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Cloxacillin Streptococcus groups A, C and G">
-        <Notes/>
-        <MICBreakpoint>
-          <S>
-            <Value>Note</Value>
-            <Notes>
-              <Note id="1">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.</Note>
-            </Notes>
-          </S>
-          <R>
-            <Value>Note</Value>
-            <Notes>
-              <Note id="1">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.</Note>
-            </Notes>
-          </R>
-        </MICBreakpoint>
-        <DiskContent>-</DiskContent>
-        <ZoneDiameterBreakpoint>
-          <S>
-            <Value>Note</Value>
-            <Notes>
-              <Note id="A">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.The breakpoints apply to streptococcus groups A, C and G only.</Note>
-            </Notes>
-          </S>
-          <R>
-            <Value>Note</Value>
-            <Notes>
-              <Note id="A">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.The breakpoints apply to streptococcus groups A, C and G only.</Note>
-            </Notes>
-          </R>
-        </ZoneDiameterBreakpoint>
-      </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Dicloxacillin Streptococcus groups A, C and G">
+      <FamilyAntimicrobialAgent name="Cloxacillin&#xa;">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -9965,7 +9927,7 @@ The breakpoints apply to streptococcus groups A, C and G only.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Flucloxacillin  Streptococcus groups A, C and G">
+      <FamilyAntimicrobialAgent name="Dicloxacillin&#xa;">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -9997,7 +9959,39 @@ The breakpoints apply to streptococcus groups A, C and G only.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Flucloxacillin &#xa;">
+        <Notes/>
+        <MICBreakpoint>
+          <S>
+            <Value>Note</Value>
+            <Notes>
+              <Note id="1">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.</Note>
+            </Notes>
+          </S>
+          <R>
+            <Value>Note</Value>
+            <Notes>
+              <Note id="1">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.</Note>
+            </Notes>
+          </R>
+        </MICBreakpoint>
+        <DiskContent>-</DiskContent>
+        <ZoneDiameterBreakpoint>
+          <S>
+            <Value>Note</Value>
+            <Notes>
+              <Note id="A">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.The breakpoints apply to streptococcus groups A, C and G only.</Note>
+            </Notes>
+          </S>
+          <R>
+            <Value>Note</Value>
+            <Notes>
+              <Note id="A">The susceptibility of streptococcus groups A, B, C and G to penicillins is inferred from the benzylpenicillin susceptibility with the exception of phenoxymethylpenicillin and isoxazolylpenicillins for streptococcus group B.The breakpoints apply to streptococcus groups A, C and G only.</Note>
+            </Notes>
+          </R>
+        </ZoneDiameterBreakpoint>
+      </FamilyAntimicrobialAgent>
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -10746,7 +10740,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Norfloxacin (screen)">
+      <FamilyAntimicrobialAgent name="Norfloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Norfloxacin_rationale_1.4.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -11598,7 +11592,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only),  S. agalactiae (group B streptococci)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only), &#xa;S. agalactiae ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -11659,7 +11653,7 @@ A. Use an MIC method.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only), S. agalactiae (group B streptococci)">
+      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only),&#xa;S. agalactiae">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -11762,7 +11756,7 @@ For oxacillin non-susceptible isolates, always determine the MIC of benzylpenici
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin (meningitis)">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -12170,7 +12164,7 @@ For oxacillin non-susceptible isolates, always determine the MIC of benzylpenici
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -12664,10 +12658,8 @@ B. For use in meningitis determine the meropenem MIC.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Meropenem (infections other than meningitis)">
-        <Notes>
-          <Note id="1">Not for meningitis (meropenem is the only carbapenem used for meningitis).</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Meropenem1">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>2</Value>
@@ -12692,10 +12684,8 @@ B. For use in meningitis determine the meropenem MIC.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Meropenem (meningitis)">
-        <Notes>
-          <Note id="2">Meropenem is the only carbapenem used for meningitis.</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Meropenem2 ">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>0.25</Value>
@@ -12855,7 +12845,7 @@ B. Isolates categorised as susceptible to norfloxacin can be reported susceptibl
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Norfloxacin (screen)">
+      <FamilyAntimicrobialAgent name="Norfloxacin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Norfloxacin_rationale_1.4.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -13624,7 +13614,7 @@ B. Place the erythromycin and clindamycin disks 12-16 mm apart (edge to edge) an
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -13685,7 +13675,7 @@ B. Place the erythromycin and clindamycin disks 12-16 mm apart (edge to edge) an
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -13764,7 +13754,7 @@ A. Benzylpenicillin 1 unit can be used to screen for beta-lactam resistance in v
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin (screen)">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -14111,7 +14101,7 @@ A. Benzylpenicillin 1 unit can be used to screen for beta-lactam resistance in v
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -14397,7 +14387,7 @@ A. Benzylpenicillin 1 unit can be used to screen for beta-lactam resistance in v
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Ceftolozane-tazobactam, S. anginosus group">
+      <FamilyAntimicrobialAgent name="Ceftolozane-tazobactam, S. anginosus ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -14783,7 +14773,7 @@ Positive test: Isolates with gentamicin MIC &gt;128 mg/L. The isolate is high-le
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Gentamicin  (test for high-level aminoglycoside resistance)">
+      <FamilyAntimicrobialAgent name="Gentamicin &#xa;">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Gentamicin_rationale_1.2_0906.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -15268,7 +15258,7 @@ A. Place the erythromycin and clindamycin disks 12-16 mm apart (edge to edge) an
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Tedizolid, S. anginosus group">
+      <FamilyAntimicrobialAgent name="Tedizolid, S. anginosus ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -15456,7 +15446,7 @@ A. Place the erythromycin and clindamycin disks 12-16 mm apart (edge to edge) an
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -15517,7 +15507,7 @@ A. Place the erythromycin and clindamycin disks 12-16 mm apart (edge to edge) an
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -15597,7 +15587,7 @@ C. Susceptibility can be inferred from ampicillin.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Benzylpenicillin (screen)">
+      <FamilyAntimicrobialAgent name="Benzylpenicillin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Benzylpenicillin_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -15962,7 +15952,7 @@ C. Susceptibility can be inferred from ampicillin.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Mecillinam_rationale_Nov2010_v_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -16458,10 +16448,8 @@ B. For use in meningitis determine the meropenem MIC value.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Meropenem (infections other than meningitis)">
-        <Notes>
-          <Note id="1">Not for meningitis (meropenem is the only carbapenem used for meningitis).</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Meropenem1">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>2</Value>
@@ -16486,10 +16474,8 @@ B. For use in meningitis determine the meropenem MIC value.</Notes>
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Meropenem (meningitis)">
-        <Notes>
-          <Note id="2">Meropenem is the only carbapenem used for meningitis.</Note>
-        </Notes>
+      <FamilyAntimicrobialAgent name="Meropenem2 ">
+        <Notes/>
         <MICBreakpoint>
           <S>
             <Value>0.25</Value>
@@ -17383,7 +17369,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -17404,7 +17390,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Rifampicin (for prophylaxis only)">
+      <FamilyAntimicrobialAgent name="Rifampicin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Rifampicin_rationale_1.0_2010_Oct.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -17445,7 +17431,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -17847,7 +17833,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Mecillinam (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Mecillinam">
         <Link>http://www.eucast.org/documents/rd/</Link>
         <Notes/>
         <MICBreakpoint>
@@ -19175,7 +19161,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Nitrofurantoin (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Nitrofurantoin">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Nitrofurantoin_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -19236,7 +19222,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Trimethoprim (uncomplicated UTI only)">
+      <FamilyAntimicrobialAgent name="Trimethoprim ">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Trimethoprim_rationale_1.0.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -23581,7 +23567,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Tetracycline (screen)">
+      <FamilyAntimicrobialAgent name="Tetracycline">
         <Link>http://www.eucast.org/fileadmin/src/media/PDFs/EUCAST_files/Rationale_documents/Tetracycline_Rationale_Document_1.0_20091202.pdf</Link>
         <Notes/>
         <MICBreakpoint>
@@ -23730,7 +23716,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Erythromycin, C. jejuni">
+      <FamilyAntimicrobialAgent name="Erythromycin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
@@ -23762,7 +23748,7 @@ B. Isolates categorised as susceptible to nalidixic acid can be reported suscept
           </R>
         </ZoneDiameterBreakpoint>
       </FamilyAntimicrobialAgent>
-      <FamilyAntimicrobialAgent name="Erythromycin, C. coli">
+      <FamilyAntimicrobialAgent name="Erythromycin, ">
         <Notes/>
         <MICBreakpoint>
           <S>
