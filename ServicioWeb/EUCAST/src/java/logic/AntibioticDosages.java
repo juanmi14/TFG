@@ -5,8 +5,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 /**
  * @author Juanmi
  */
-@XStreamAlias("DosagesAntimicrobialAgent")
-public class DosagesAntimicrobialAgent extends AntimicrobialAgent{
+@XStreamAlias("AntibioticDosages")
+public class AntibioticDosages extends AntimicrobialAgent{
     //attributes
 //    private String name;
     //elements
@@ -17,13 +17,13 @@ public class DosagesAntimicrobialAgent extends AntimicrobialAgent{
     @XStreamAlias("HighDose")
     private String highDose;
 
-    public DosagesAntimicrobialAgent(){}
+    public AntibioticDosages(){}
     
-    public DosagesAntimicrobialAgent(String name){
+    public AntibioticDosages(String name){
         super(name);
     }
     
-    public DosagesAntimicrobialAgent(String name, String link, String standarDose, String highDose) {
+    public AntibioticDosages(String name, String link, String standarDose, String highDose) {
         this(name);
         this.link = link;
         this.standarDose = standarDose;

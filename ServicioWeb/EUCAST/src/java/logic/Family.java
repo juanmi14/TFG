@@ -21,8 +21,8 @@ public class Family {
     private List<String> advices;
     @XStreamAlias("DiskDifution")
     private DiskDifution diskDifution;
-    @XStreamImplicit(itemFieldName="Group")
-    private List<Group> groups;
+    @XStreamImplicit(itemFieldName="AntibioticFamily")
+    private List<AntibioticFamily> antibioticFamilies;
 
     public Family(){}
     
@@ -31,11 +31,11 @@ public class Family {
         this.defined = false;
     }
     
-    public Family(String name, List<String> advices, DiskDifution diskDifution, List<Group> groups) {
+    public Family(String name, List<String> advices, DiskDifution diskDifution, List<AntibioticFamily> antibioticFamilies) {
         this(name);
         this.advices = advices;
         this.diskDifution = diskDifution;
-        this.groups = groups;
+        this.antibioticFamilies = antibioticFamilies;
     }
 
     public String getName() {
@@ -71,24 +71,24 @@ public class Family {
         this.diskDifution = diskDifution;
     }
 
-    public List<Group> getGroups() {
-        return groups;
+    public List<AntibioticFamily> getAntibioticFamilies() {
+        return antibioticFamilies;
     }
 
-    public void setGroups(List<Group> groups) {
-        this.groups = groups;
+    public void setAntibioticFamilies(List<AntibioticFamily> antibioticFamilies) {
+        this.antibioticFamilies = antibioticFamilies;
     }
     
-    public void addGroup(Group group){
-        if(this.groups == null)
-            this.groups = new ArrayList<Group>();
-        this.groups.add(group);
+    public void addAntibioticFamily(AntibioticFamily antibioticFamily){
+        if(this.antibioticFamilies == null)
+            this.antibioticFamilies = new ArrayList<AntibioticFamily>();
+        this.antibioticFamilies.add(antibioticFamily);
     }
 
     public int getNumAntiMicInGruoups(){
         int n = 0;
-        if(this.groups != null){
-            for(Group g: groups){
+        if(this.antibioticFamilies != null){
+            for(AntibioticFamily g: antibioticFamilies){
                 if(g.getAntimicrobialAgents() != null)
                     n += g.getAntimicrobialAgents().size();
             }

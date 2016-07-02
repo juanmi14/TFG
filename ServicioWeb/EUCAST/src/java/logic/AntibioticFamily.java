@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Juanmi
  */
-public class Group {
+public class AntibioticFamily {
     //attributes
     @XStreamAsAttribute
     private String name;
@@ -22,13 +22,13 @@ public class Group {
     @XStreamImplicit
     private List<AntimicrobialAgent> antimicrobialAgents;
 
-    public Group(){}
+    public AntibioticFamily(){}
     
-    public Group(String name){
+    public AntibioticFamily(String name){
         this.name = name;
     }
     
-    public Group(String name, String notes, List<Note> ownNotes, List<AntimicrobialAgent> antimicrobialAgents) {
+    public AntibioticFamily(String name, String notes, List<Note> ownNotes, List<AntimicrobialAgent> antimicrobialAgents) {
         this(name);
         this.notes = notes;
         this.ownNotes = ownNotes;

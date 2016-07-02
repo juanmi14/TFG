@@ -7,8 +7,8 @@ import java.util.List;
  *
  * @author Juanmi
  */
-@XStreamAlias("FamilyAntimicrobialAgent")
-public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
+@XStreamAlias("Antibiotic")
+public class Antibiotic extends AntimicrobialAgent{
     //attributes
 //    private String name;
     //elements
@@ -23,13 +23,13 @@ public class FamilyAntimicrobialAgent extends AntimicrobialAgent{
     @XStreamAlias("ZoneDiameterBreakpoint")
     private ZoneDiameterBreakpoint zoneDiameterBreakpoint;
 
-    public FamilyAntimicrobialAgent(){}
+    public Antibiotic(){}
     
-    public FamilyAntimicrobialAgent(String name){
+    public Antibiotic(String name){
         super(name);
     }
     
-    public FamilyAntimicrobialAgent(String name, String link, MICBreakpoint micBreakpoint, String diskContent, List<Note> notes, ZoneDiameterBreakpoint zoneDiameterBreakpoint) {
+    public Antibiotic(String name, String link, MICBreakpoint micBreakpoint, String diskContent, List<Note> notes, ZoneDiameterBreakpoint zoneDiameterBreakpoint) {
         this(name);
         this.link = link;
         this.micBreakpoint = micBreakpoint;
