@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Details"
+    tools:showIn="@layout/activity_details"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/details_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            card_view:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/details_linear"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/details_tv_sensibility"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:text="Sensibility"
+                    android:textSize="30sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/details_tv_family"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Family"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/details_tv_antibiotic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:text="Antibiotic"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/details_tv_diameter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:text="Diameter"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/details_cl_antibiotic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            card_view:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Antibiotic"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AntibioticName"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="Link"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_link_viewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="15sp"
+                    />
+                <LinearLayout
+                    android:id="@+id/details_ly_antibiotic_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/details_tv_antibiotic_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:text="Notes"
+                        android:textSize="15sp"
+                        android:layout_weight="5" />
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_sp_antibiotic_notes"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_notes_viewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/details_tv_antibiotic_s"
+                        android:text="S"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/details_tv_antibiotic_r"
+                        android:text="R"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/details_cl_antibiotic_family"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            card_view:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_family_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Antibiotic Family"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_family_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AntibioticFamilyName"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+                <LinearLayout
+                    android:id="@+id/details_ly_antibiotic_family_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/details_tv_antibiotic_family_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:text="Notes"
+                        android:textSize="15sp"
+                        android:layout_weight="5" />
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_sp_antibiotic_family_notes"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/details_tv_antibiotic_family_notes_viewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

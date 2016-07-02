@@ -59,7 +59,7 @@ public class ExcelToXML {
                                 extraerDosages(dosages, hoja);
                             }else {//si NO es DOSAGES, CONTENT, NOTES, GUIDANCE o CHANGES -> FAMILIA
                                 Family familia = extraerFamily(hoja);
-                                if (familia != null && familia.getGroups() != null && !familia.getGroups().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
+                                if (familia != null && familia.getAntibioticFamilies() != null && !familia.getAntibioticFamilies().isEmpty()) {//si alguna familia no contiene datos no se guarda ni procesa
                                     families.add(familia);
                                 }
                             }
@@ -117,13 +117,13 @@ public class ExcelToXML {
 
     private static void extraerDosages(Dosages dosages, XSSFSheet hoja) {
         //los datos empiezan en la casilla A5
-        ArrayList<Group> grupos = new ArrayList<Group>();
+        ArrayList<AntibioticFamily> grupos = new ArrayList<AntibioticFamily>();
         Iterator iFila = hoja.rowIterator();
         int idxF = 0;
         boolean vengoDeGrupo = false;//así puedo controlar el inicio de un grupo
-        Group grupo = new Group();
+        AntibioticFamily grupo = new AntibioticFamily();
         ArrayList<AntimicrobialAgent> micros = new ArrayList<AntimicrobialAgent>();
-        DosagesAntimicrobialAgent medic;
+        AntibioticDosages medic;
         while (iFila.hasNext()) {
             XSSFRow fila = (XSSFRow) iFila.next();
             if (fila != null) {
@@ -150,11 +150,11 @@ public class ExcelToXML {
                                     micros = new ArrayList<AntimicrobialAgent>();
                                     grupos.add(grupo);
                                 }
-                                grupo = new Group(nombre);
+                                grupo = new AntibioticFamily(nombre);
                                 vengoDeGrupo = true;
                             }
                         }else if (fuente.getFontHeightInPoints() == medicS && nombre.length() > 0) {
-                            medic = new DosagesAntimicrobialAgent(nombre);
+                            medic = new AntibioticDosages(nombre);
                             String standard = celdaStandard.getStringCellValue().trim();
                             String high = celdaHigh.getStringCellValue().trim();
                             Hyperlink link = celdaNombre.getHyperlink();
@@ -182,7 +182,7 @@ public class ExcelToXML {
         //el último grupo se añande después del bucle
         grupo.setAntimicrobialAgents(micros);
         grupos.add(grupo);
-        dosages.setGroups(grupos);
+        dosages.setAntibioticFamilies(grupos);
     }
 
     private static Family extraerFamily(XSSFSheet hoja) {
@@ -257,17 +257,17 @@ public class ExcelToXML {
         //cuando se detecte un grupo, recorrer sus agentes, extrayendo enlaces, mediciones y notas
         //el primer grupo empieza en A5
         //las notas están para cada grupo en G(f+2), A5 -> G7, A28 -> G30
-        ArrayList<Group> grupos = new ArrayList<Group>();//los grupos de la familia
+        ArrayList<AntibioticFamily> grupos = new ArrayList<AntibioticFamily>();//los grupos de la familia
         Iterator iFila = hoja.rowIterator();
         int idxF = 0;
         boolean vengoDeGrupo = true;//así puedo controlar el inicio de un grupo
         //2.1-busco un grupo
         //2.2-proceso y añado sus micros
         //2.3-encuentro otro grupo
-        Group grupo = new Group();
+        AntibioticFamily grupo = new AntibioticFamily();
         List<Note> listaNotas = new ArrayList<Note>();
         TreeMap<String, String> mapaNotas = new TreeMap<String, String>();
-        FamilyAntimicrobialAgent medic = new FamilyAntimicrobialAgent();
+        Antibiotic medic = new Antibiotic();
         while (iFila.hasNext()) {
             XSSFRow fila = (XSSFRow) iFila.next();
             if (fila != null) {
@@ -299,9 +299,9 @@ public class ExcelToXML {
                             //hay casos particulares en que unas notas tienen tamaño 10, hay que controlarlo
                             if(fila.getCell(1) != null && isGroupCell(celdaNombre)){
                                 if(!vengoDeGrupo){//cuando detecto que llego a un nuevo grupo, guardo el anterior
-                                    familia.addGroup(grupo);
+                                    familia.addAntibioticFamily(grupo);
                                 }
-                                grupo = new Group();
+                                grupo = new AntibioticFamily();
                                 //obtener sus notas
                                 int idFNotas = idxF + 3;
                                 //en algunos casos no hay en +3 si no en +4
@@ -506,7 +506,7 @@ public class ExcelToXML {
                             //creo el objeto de medicamento
                             //DEBO CONTROLAR EL NOMBRE (superscript)
                             
-                            medic = new FamilyAntimicrobialAgent();
+                            medic = new Antibiotic();
                             XSSFRichTextString v = celdaNombre.getRichStringCellValue();
                             if(v.numFormattingRuns() > 1){//si tiene superscript
                                 nombre = getValor(v);
@@ -567,7 +567,7 @@ public class ExcelToXML {
             }
         }
         //hay que añadir el último grupo
-        familia.addGroup(grupo);
+        familia.addAntibioticFamily(grupo);
     }
     
     private static TreeMap<String, String> obtenerNotas(String notas){
@@ -628,17 +628,17 @@ public class ExcelToXML {
         //en este caso solo tienen MIC breakpoint (mg/L) S<= R>
         //el primer grupo empieza en A5
         //las notas están para cada grupo en D(f+2), A5 -> D7, A28 -> D30
-        ArrayList<Group> grupos = new ArrayList<Group>();//los grupos de la familia
+        ArrayList<AntibioticFamily> grupos = new ArrayList<AntibioticFamily>();//los grupos de la familia
         Iterator iFila = hoja.rowIterator();
         int idxF = 0;
         boolean vengoDeGrupo = true;//así puedo controlar el inicio de un grupo
         //2.1-busco un grupo
         //2.2-proceso y añado sus micros
         //2.3-encuentro otro grupo
-        Group grupo = new Group();
+        AntibioticFamily grupo = new AntibioticFamily();
         List<Note> listaNotas = new ArrayList<Note>();
         TreeMap<String, String> mapaNotas = new TreeMap<String, String>();
-        FamilyAntimicrobialAgent medic = new FamilyAntimicrobialAgent();
+        Antibiotic medic = new Antibiotic();
         while (iFila.hasNext()) {
             XSSFRow fila = (XSSFRow) iFila.next();
             if (fila != null) {
@@ -670,9 +670,9 @@ public class ExcelToXML {
                                     String ng = grupo.getName();
                                     if(ng == null || ng.isEmpty())
                                         grupo.setName("-");
-                                    familia.addGroup(grupo);
+                                    familia.addAntibioticFamily(grupo);
                                 }
-                                grupo = new Group();
+                                grupo = new AntibioticFamily();
                                 //obtener sus notas
                                 int idFNotas = idxF + 3;
                                 //en algunos casos no hay en +3 si no en +4
@@ -818,7 +818,7 @@ public class ExcelToXML {
                             //creo el objeto de medicamento
                             //DEBO CONTROLAR EL NOMBRE (superscript)
                             
-                            medic = new FamilyAntimicrobialAgent();
+                            medic = new Antibiotic();
                             XSSFRichTextString v = celdaNombre.getRichStringCellValue();
                                 if(v.numFormattingRuns() > 1){//si tiene superscript
                                     nombre = getValor(v);
@@ -867,7 +867,7 @@ public class ExcelToXML {
         String ng = grupo.getName();
         if(ng == null || ng.isEmpty())
             grupo.setName("-");
-        familia.addGroup(grupo);
+        familia.addAntibioticFamily(grupo);
     }
 
     private static String procesarString(String valor){

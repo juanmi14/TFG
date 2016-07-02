@@ -26,22 +26,30 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" name="Group">
+                <xs:element maxOccurs="unbounded" name="AntibioticFamily">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element minOccurs="0" name="Notes">
+                            <xs:element minOccurs="0" name="Notes" type="xs:string"/>
+                            <xs:element minOccurs="0" name="OwnNotes">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element maxOccurs="unbounded" minOccurs="0" ref="Note"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="Note"/>
-                            <xs:element name="FamilyAntimicrobialAgent" maxOccurs="unbounded">
+                            <xs:element name="Antibiotic" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element minOccurs="0" name="Link"/>
-                                        <xs:element name="MICBreackpoint">
+                                        <xs:element minOccurs="0" name="Notes" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  ref="Note"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="MICBreakpoint">
                                             <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="S">
@@ -49,8 +57,14 @@
                                                   <xs:sequence>
                                                   <xs:element name="Value"/>
                                                   <xs:element minOccurs="0" name="Link"/>
+                                                  <xs:element minOccurs="0" name="Notes">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
                                                   <xs:element maxOccurs="unbounded" minOccurs="0"
                                                   ref="Note"/>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
                                                   </xs:sequence>
                                                   </xs:complexType>
                                                   </xs:element>
@@ -59,8 +73,14 @@
                                                   <xs:sequence>
                                                   <xs:element name="Value"/>
                                                   <xs:element minOccurs="0" name="Link"/>
+                                                  <xs:element minOccurs="0" name="Notes">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
                                                   <xs:element maxOccurs="unbounded" minOccurs="0"
                                                   ref="Note"/>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
                                                   </xs:sequence>
                                                   </xs:complexType>
                                                   </xs:element>
@@ -76,8 +96,14 @@
                                                   <xs:sequence>
                                                   <xs:element name="Value"/>
                                                   <xs:element minOccurs="0" name="Link"/>
+                                                  <xs:element minOccurs="0" name="Notes">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
                                                   <xs:element maxOccurs="unbounded" minOccurs="0"
                                                   ref="Note"/>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
                                                   </xs:sequence>
                                                   </xs:complexType>
                                                   </xs:element>
@@ -86,8 +112,14 @@
                                                   <xs:sequence>
                                                   <xs:element name="Value"/>
                                                   <xs:element minOccurs="0" name="Link"/>
+                                                  <xs:element minOccurs="0" name="Notes">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
                                                   <xs:element maxOccurs="unbounded" minOccurs="0"
                                                   ref="Note"/>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
                                                   </xs:sequence>
                                                   </xs:complexType>
                                                   </xs:element>
@@ -99,7 +131,7 @@
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
-                        <xs:attribute name="name" type="xs:string" use="optional"/>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
@@ -110,10 +142,10 @@
     <xs:element name="Dosages">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" name="Group">
+                <xs:element maxOccurs="unbounded" name="AntibioticFamily">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element maxOccurs="unbounded" name="DosagesAntimicrobialAgent">
+                            <xs:element maxOccurs="unbounded" name="AntibioticDosages">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element minOccurs="0" name="Link"/>

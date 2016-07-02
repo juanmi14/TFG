@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Server URL"
+        android:key="url_analyzer"
+        android:summary="Introduce de Server URL where the query service is"/>
+    <Preference
+        android:key="test_connection"
+        android:summary="Test the connection with the service"
+        android:title="Check connection" />
+    <ListPreference
+        android:dialogTitle="Select the queries order"
+        android:entries="@array/order"
+        android:entryValues="@array/codorder"
+        android:key="order"
+        android:summary="Select the order to show the queries"
+        android:title="Queries order" />
+    <EditTextPreference android:title="Grid columns"
+        android:key="grid_columns"
+        android:summary="Select the number of columns of the grid view"
+        android:numeric="integer"/>
+    <!--<CheckBoxPreference-->
+        <!--android:key="mostrar_marca_stock"-->
+        <!--android:summary="@string/Mostrar_marca_stock_descripcion"-->
+        <!--android:title="@string/Mostrar_marca_stock_titulo" />-->
+    <!--&lt;!&ndash;<ListPreference&ndash;&gt;-->
+    <!--&lt;!&ndash;android:dialogTitle="@string/Selecciona_el_orden"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:entries="@array/orden"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:entryValues="@array/codorden"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:key="orden_listas"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:summary="@string/Selecciona_el_orden"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:title="@string/Orden_de_las_listas" />&ndash;&gt;-->
+    <!--<CheckBoxPreference-->
+        <!--android:key="mostrar_precio"-->
+        <!--android:summary="@string/Mostrar_precio_lista_compra_descripcion"-->
+        <!--android:title="@string/Mostrar_precio_lista_compra_titulo" />-->
+    <!--<Preference-->
+        <!--android:key="activar_tutoriales"-->
+        <!--android:summary="@string/Activar_tutoriales"-->
+        <!--android:title="@string/Tutoriales" />-->
+</PreferenceScreen>

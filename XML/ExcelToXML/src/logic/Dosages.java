@@ -9,26 +9,26 @@ import java.util.List;
  */
 public class Dosages {
     //elements
-    @XStreamImplicit(itemFieldName="Group")
-    List<Group> groups;
+    @XStreamImplicit(itemFieldName="AntibioticFamily")
+    List<AntibioticFamily> antibioticFamilies;
 
     public Dosages(){}
 
-    public Dosages(List<Group> groups) {
-        this.groups = groups;
+    public Dosages(List<AntibioticFamily> antibioticFamilies) {
+        this.antibioticFamilies = antibioticFamilies;
     }
 
-    public List<Group> getGroups() {
-        return groups;
+    public List<AntibioticFamily> getAntibioticFamilies() {
+        return antibioticFamilies; 
     }
 
-    public void setGroups(List<Group> groups) {
-        this.groups = groups;
+    public void setAntibioticFamilies(List<AntibioticFamily> antibioticFamilies) {
+        this.antibioticFamilies = antibioticFamilies;
     }
 
     @Override
     public String toString() {
-        return groups.toString();
+        return antibioticFamilies.toString();
     }
     
     

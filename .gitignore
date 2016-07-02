@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/ServicioWeb/ServicioRESTFul/nbproject/private/
+/ServicioWeb/ServicioRESTFul/build/
+/ServicioWeb/ServicioRESTFul/dist/

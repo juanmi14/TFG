@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="order">
+        <item>Recent-Old</item>
+        <item>Old-Recent</item>
+    </string-array>
+    <string-array name="codorder">
+        <item>DESC</item>
+        <item>ASC</item>
+    </string-array>
+</resources>

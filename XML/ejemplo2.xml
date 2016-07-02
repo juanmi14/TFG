@@ -9,12 +9,10 @@
     </DiskDifution>
     
     <Group name="Penicillins">
-        <Notes>
-            <Note id="1/A">Bla bla bla</Note>
-            <Note id="2">Bla bla bla</Note>
-            <Note id="B">Bla bla bla</Note>
-        </Notes>
-        <Note id="1">Bla bla bla</Note><!-- opc -->
+        <Note id="1/A">Bla bla bla</Note>
+        <Note id="2">Bla bla bla</Note>
+        <Note id="B">Bla bla bla</Note>
+        <OwnNote id="1">Bla bla bla</OwnNote><!-- opc -->
         <AntimicrobialAgent name="Benzylpenicillin">
             <Link>eucast.com</Link><!-- opc -->
             <MICBreackPoint><!-- migrograms -->
