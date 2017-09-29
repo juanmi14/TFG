@@ -1,4 +1,9 @@
 # TFG
+End-of-Grade Work on the creation of a web service and mobile application to help manage the Analysis of Bacterial Resistance to Medications.
+
+1-Extraction of information in Excel and storage in XML. 2-Creation of web service that access XML data. 3-Mobile application, initially on Android, to, through the web service, consult and analyze bacterial resistance to drugs.
+
+//
 Trabajo de Fin de Grado sobre la creación de un servicio web y aplicación móvil para ayudar a gestionar el Análisis de Resistencia Bacteriana a Medicamentos.
 
 1-Extracción de información en Excel y almacenaje en XML.
